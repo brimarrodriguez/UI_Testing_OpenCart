@@ -6,12 +6,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/brimarrodriguez/UI_Testing_OpenCart.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
