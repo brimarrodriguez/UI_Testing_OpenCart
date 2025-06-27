@@ -12,12 +12,6 @@ pipeline {
             }
         }
 
-        stage('Create Screenshots Folder') {
-            steps {
-                bat 'mkdir screenshots'
-            }
-        }
-
         stage('Run WebDriverIO Tests') {
             steps {
                 wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
