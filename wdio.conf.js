@@ -7,6 +7,15 @@ export const config = {
     capabilities: [{
         maxInstances: 1,
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                '--headless=new',
+                '--disable-gpu',
+                '--window-size=1920,1080',
+                '--no-sandbox',
+                '--disable-dev-shm-usage'
+            ]
+    }
         acceptInsecureCerts: true
     }],
     logLevel: 'info',
