@@ -15,8 +15,7 @@ export const config = {
                 '--no-sandbox',
                 '--disable-dev-shm-usage'
             ]
-    }
-        acceptInsecureCerts: true
+        }
     }],
     logLevel: 'info',
     bail: 0,
