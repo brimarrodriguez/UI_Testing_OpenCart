@@ -12,9 +12,17 @@ pipeline {
             }
         }
 
+        stage('Create Screenshots Folder') {
+            steps {
+                bat 'mkdir screenshots'
+            }
+        }
+
         stage('Run WebDriverIO Tests') {
             steps {
-                bat 'npx wdio run wdio.conf.js'
+                wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
+                    bat 'npx wdio run wdio.conf.js'
+                }
             }
         }
     }
@@ -31,4 +39,3 @@ pipeline {
         }
     }
 }
-
